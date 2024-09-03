@@ -3,11 +3,13 @@
   "name": "transhook-devcontainer",
   "onCreateCommand": "elixir --version",
   "extensions": [
-      "jakebecker.elixir-ls",
-      "eamodio.gitlens"
+    "jakebecker.elixir-ls",
+    "eamodio.gitlens",
+    "nghluanzz1234.text-converter",
+    "saratravi.elixir-formatter"
   ],
   "forwardPorts": [
-      4000
+    4000
   ],
   "postCreateCommand": "apt-get update && apt-get install -y git"
 }
