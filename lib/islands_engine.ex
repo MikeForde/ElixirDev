@@ -1,5 +1,7 @@
 defmodule IslandsEngine do
-  import Helpers.Format, only: [trim_text: 1]
+  alias Helpers.Format
+
+  @somename " baby"
   @moduledoc """
   Documentation for `IslandsEngine`.
   """
@@ -20,13 +22,21 @@ alias ElixirLS.LanguageServer.Providers.CodeAction.Helpers
   end
 
   def newuser(name, age) do
-    formatted_user = trim_text(name)
-    %{name: formatted_user, age: age}
+    formatted_user = Format.trim_text(name)
+    %{name: formatted_user <> " " <> @somename, age: age}
   end
 
   def newuser(), do: generate_user()
 
+
   defp generate_user do
     %{mike: "Mike", age: 53}
+  end
+
+  def generate_slug(text) do
+    text
+    |> String.downcase()
+    |> String.trim()
+    |> String.replace(" ", "-")
   end
 end
