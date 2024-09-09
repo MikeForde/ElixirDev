@@ -1,5 +1,5 @@
 {
-  "image": "hexpm/elixir:1.12.1-erlang-24.0.4-ubuntu-focal-20210325",
+  "image": "hexpm/elixir:1.16.3-erlang-24.3.4.9-alpine-3.19.4",
   "name": "transhook-devcontainer",
   "onCreateCommand": "elixir --version",
   "extensions": [
