@@ -1,7 +1,7 @@
 defmodule IslandsEngine do
   alias Helpers.Format
 
-  @somename " baby"
+  @somename "is"
   @moduledoc """
   Documentation for `IslandsEngine`.
   """
@@ -21,9 +21,18 @@ alias ElixirLS.LanguageServer.Providers.CodeAction.Helpers
     :world
   end
 
-  def newuser(name, age) do
+  def newuser("Mike", age)  do
+    %{name: "Mike" <> " " <> @somename <> " cool", age: age}
+  end
+
+  def newuser(name, age) when age >= 18 do
     formatted_user = Format.trim_text(name)
-    %{name: formatted_user <> " " <> @somename, age: age}
+    %{name: formatted_user <> " " <> @somename <> " not cool and old", age: age}
+  end
+
+  def newuser(name, age) when age < 18 do
+    formatted_user = Format.trim_text(name)
+    %{name: formatted_user <> " " <> @somename <> " not cool but young", age: age}
   end
 
   def newuser(), do: generate_user()
@@ -38,5 +47,6 @@ alias ElixirLS.LanguageServer.Providers.CodeAction.Helpers
     |> String.downcase()
     |> String.trim()
     |> String.replace(" ", "-")
+    |> dbg()
   end
 end

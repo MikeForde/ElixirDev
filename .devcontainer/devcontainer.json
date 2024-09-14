@@ -2,12 +2,16 @@
   "image": "hexpm/elixir:1.17.2-erlang-26.2.5.3-ubuntu-focal-20240530",
   "name": "transhook-devcontainer",
   "onCreateCommand": "elixir --version",
-  "extensions": [
-    "jakebecker.elixir-ls",
-    "eamodio.gitlens",
-    "nghluanzz1234.text-converter",
-    "saratravi.elixir-formatter"
-  ],
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "jakebecker.elixir-ls",
+        "eamodio.gitlens",
+        "nghluanzz1234.text-converter",
+        "saratravi.elixir-formatter"
+      ]
+    }
+  },
   "forwardPorts": [
     4000
   ],
